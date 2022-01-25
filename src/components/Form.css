@@ -1,0 +1,58 @@
+/* Variables */
+
+:root {
+  --blue: #4d53da;
+  --darkblue: #00023f;
+  --white: #fff;
+  --trans-darkblue: rgba(96, 93, 182, 0.801);
+
+  --bold: 700;
+  --fs-med: 1.275rem;
+}
+
+.banner {
+  margin-top: 2rem;
+  border-radius: 15px;
+  padding: 1rem;
+  background-image: url(../images/banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 15vh;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.banner p {
+  text-align: center;
+  font-weight: var(--bold);
+  font-size: var(--fs-med);
+  color: var(--white);
+}
+
+.form-container {
+  background-color: var(--darkblue);
+  padding: 1.5rem;
+  width: 85%;
+  margin: 0 auto;
+  border-radius: 10px;
+  position: relative;
+  margin-top: -40px;
+}
+
+input[type="text"] {
+  border: 0;
+  border-radius: 5px;
+  padding: 0.5rem 0.9rem;
+  width: 100%;
+  font-weight: var(--bold);
+  background: white;
+  color: var(--trans-darkblue);
+}
+
+input::placeholder {
+  color: var(--darkblue);
+  font-weight: var(--bold);
+}

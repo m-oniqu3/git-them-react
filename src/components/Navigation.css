@@ -1,8 +1,12 @@
 :root {
-  --black: 900;
+  --bold: 700;
   --fs-med: 1.275rem;
+  --darkblue: #00023f;
 }
 
+* {
+  color: var(--darkblue);
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -19,7 +23,7 @@ figure.logo {
 }
 
 .bold {
-  font-weight: var(--black);
+  font-weight: var(--bold);
 }
 
 .logo-text,
