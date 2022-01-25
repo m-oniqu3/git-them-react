@@ -1,0 +1,32 @@
+:root {
+  --black: 900;
+  --fs-med: 1.275rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+figure.logo {
+  width: 10%;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.bold {
+  font-weight: var(--black);
+}
+
+.logo-text,
+span {
+  font-size: var(--fs-med);
+}
+
+.logo-text {
+  margin: 0 auto 0 1rem;
+}
