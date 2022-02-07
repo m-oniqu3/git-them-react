@@ -10,7 +10,11 @@ function Form({ getInputOnSubmit }) {
 
   const sendData = (e) => {
     e.preventDefault();
+
+    //send the user input to the app component
     getInputOnSubmit(input);
+
+    //clear the input field
     setInput("");
   };
 

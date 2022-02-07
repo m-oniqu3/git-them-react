@@ -18,6 +18,8 @@ function App() {
 
       {/* accept data from the form component and send it to the parent component (app) */}
       <Form getInputOnSubmit={getInputOnSubmit} />
+
+      {/* accept the form data from the form component */}
       <Request userInput={formInput} />
     </div>
   );
