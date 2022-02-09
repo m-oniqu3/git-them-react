@@ -1,7 +1,7 @@
 /* Variables */
 
 :root {
-  --blue: #4d53da;
+  --darkblue: #00023f;
 }
 
 .profile {
@@ -20,7 +20,7 @@
 .link {
   width: 50%;
   margin: 1rem auto;
-  background-color: var(--blue);
+  background-color: var(--darkblue);
   color: white;
   text-decoration: none;
   padding: 10px 20px;
