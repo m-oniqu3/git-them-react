@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileImg from "./ProfileImg";
 import ProfileDetails from "./ProfileDetails";
+import Repos from "./Repos";
 
 function UserInfo({ results }) {
   console.log(results);
@@ -33,6 +34,7 @@ function UserInfo({ results }) {
         gists={public_gists}
         gistsUrl={gists_url}
       />
+      <Repos name={name} />
     </div>
   );
 }

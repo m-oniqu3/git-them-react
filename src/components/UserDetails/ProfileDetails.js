@@ -1,5 +1,4 @@
 import React from "react";
-//import styled from "./ProfileDetails.module.css";
 import global from "./ProfileGlobalStyles.module.css";
 
 function ProfileDetails({
@@ -16,18 +15,21 @@ function ProfileDetails({
   return (
     <section className={global.wrapper}>
       <h1>{name}</h1>
+
       <p className={global.item}>Bio: {bio}</p>
       <p className={global.item}>Location: {location}</p>
       <a className={global.item} href={gistsUrl}>
         Public Gists: {gists}
       </a>
-      <a className={global.item} href={followingUrl}>
-        Following: {following}
-      </a>
 
-      <a className={global.item} href={followersUrl}>
-        Followers: {followers}
-      </a>
+      <div className={global.follows}>
+        <a className={global.item} href={followingUrl}>
+          Following: {following}
+        </a>
+        <a className={global.item} href={followersUrl}>
+          Followers: {followers}
+        </a>
+      </div>
     </section>
   );
 }

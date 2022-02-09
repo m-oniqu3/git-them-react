@@ -30,3 +30,9 @@ h1 {
   font-weight: 600;
   color: var(--white);
 }
+
+.follows {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1rem;
+}
