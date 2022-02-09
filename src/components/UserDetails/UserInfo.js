@@ -15,8 +15,8 @@ function UserInfo({ results }) {
     followers,
     followers_url,
     public_gists,
+    gists_url,
   } = results;
-  console.log(name);
 
   return (
     <div>
@@ -31,6 +31,7 @@ function UserInfo({ results }) {
         followers={followers}
         followersUrl={followers_url}
         gists={public_gists}
+        gistsUrl={gists_url}
       />
     </div>
   );
