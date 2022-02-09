@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import config from "../config";
+import config from "../../config";
 
 function Request({ userInput, sendResults }) {
   //State
@@ -19,16 +19,16 @@ function Request({ userInput, sendResults }) {
         const data = await response.json();
         return setResults(data);
       };
-
+      //if the user input exists and is not empty then make the request to the api
       if (userInput) {
         requestData();
       }
-      //if the user input is not empty then make the request to the api
     } catch (error) {
       console.error(error, "Something went wrong while trying to fetch data.");
     }
   }, [url, userInput]);
 
+  //if userinput and results exist and is not empty then send the results to the app component (parent)
   useEffect(() => {
     if (userInput && results.length !== 0) {
       sendResults(results);

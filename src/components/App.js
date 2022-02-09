@@ -2,8 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import Navigation from "./Navigation";
 import Form from "./Form";
-import Request from "./Request";
-import UserInfo from "./UserInfo";
+import Request from "./api/Request";
+import UserInfo from "./UserDetails/UserInfo";
 
 function App() {
   const [formInput, setFormInput] = useState("");
@@ -14,6 +14,7 @@ function App() {
     setFormInput(input);
   };
 
+  //get the results from the request component
   const sendResultsHandler = (data) => {
     setRequestResults(data);
   };
@@ -25,8 +26,11 @@ function App() {
       {/* accept data from the form component and send it to the parent component (app) */}
       <Form getInputOnSubmit={getInputOnSubmitHandler} />
 
-      {/* accept the form data from the form component */}
+      {/* accept the form data from the app component */}
+      {/* send the results from the api to the app component */}
       <Request userInput={formInput} sendResults={sendResultsHandler} />
+
+      {/* accepts the data from the request component */}
       <UserInfo results={requestResults} />
     </div>
   );
