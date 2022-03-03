@@ -1,10 +1,13 @@
 import React from "react";
 import ProfileImg from "./ProfileImg";
 import ProfileDetails from "./ProfileDetails";
-import Repos from "./Repos";
+// import Repos from "./Repos";
 
 function UserInfo({ results }) {
   console.log(results);
+
+  const user = results[0];
+  console.log(user);
   //destructured the results object
   const {
     url,
@@ -18,7 +21,7 @@ function UserInfo({ results }) {
     followers_url,
     public_gists,
     gists_url,
-  } = results;
+  } = user.value;
 
   return (
     <div>
@@ -36,8 +39,7 @@ function UserInfo({ results }) {
         gists={public_gists}
         gistsUrl={gists_url}
       />
-
-      <Repos name={name} />
+      {/* <Repos name={name} />  */}
     </div>
   );
 }
