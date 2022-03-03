@@ -5,6 +5,7 @@ import Repos from "./Repos";
 
 function UserInfo({ results }) {
   console.log(results);
+  //destructured the results object
   const {
     url,
     name,
@@ -21,6 +22,7 @@ function UserInfo({ results }) {
 
   return (
     <div>
+      {/* send some of the results data as props */}
       <ProfileImg url={url} avatar={avatar_url} name={name} />
 
       <ProfileDetails
@@ -34,6 +36,7 @@ function UserInfo({ results }) {
         gists={public_gists}
         gistsUrl={gists_url}
       />
+
       <Repos name={name} />
     </div>
   );

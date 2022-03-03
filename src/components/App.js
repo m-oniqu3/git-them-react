@@ -31,7 +31,7 @@ function App() {
       <Request userInput={formInput} sendResults={sendResultsHandler} />
 
       {/* accepts the data from the request component */}
-      <UserInfo results={requestResults} />
+      {/* <UserInfo results={requestResults} /> */}
     </div>
   );
 }
