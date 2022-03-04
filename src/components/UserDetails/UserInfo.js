@@ -4,7 +4,6 @@ import ProfileDetails from "./ProfileDetails";
 import Repos from "./Repos";
 
 function UserInfo({ userResults, repoResults }) {
-  console.log(repoResults);
   //destructured the userResults object
   const {
     url,
@@ -41,7 +40,11 @@ function UserInfo({ userResults, repoResults }) {
         </section>
       )}
 
-      {repoResults && <Repos repos={repoResults} />}
+      {repoResults.length !== 0 ? (
+        <Repos repos={repoResults} name={name} />
+      ) : (
+        <p>No repositories for this user </p>
+      )}
     </div>
   );
 }
