@@ -23,19 +23,23 @@ function UserInfo({ results }) {
   return (
     <div>
       {/* send some of the results data as props */}
-      <ProfileImg url={url} avatar={avatar_url} name={name} />
+      {results.length !== 0 && (
+        <section>
+          <ProfileImg url={url} avatar={avatar_url} name={name} />
 
-      <ProfileDetails
-        name={name}
-        bio={bio}
-        location={location}
-        following={following}
-        followingUrl={following_url}
-        followers={followers}
-        followersUrl={followers_url}
-        gists={public_gists}
-        gistsUrl={gists_url}
-      />
+          <ProfileDetails
+            name={name}
+            bio={bio}
+            location={location}
+            following={following}
+            followingUrl={following_url}
+            followers={followers}
+            followersUrl={followers_url}
+            gists={public_gists}
+            gistsUrl={gists_url}
+          />
+        </section>
+      )}
       {/* <Repos name={name} />  */}
     </div>
   );
