@@ -7,7 +7,8 @@ import UserInfo from "./UserDetails/UserInfo";
 
 function App() {
   const [formInput, setFormInput] = useState("");
-  const [requestResults, setRequestResults] = useState([]);
+  const [userResults, setUserResults] = useState([]);
+  const [repoResults, setRepoResults] = useState([]);
 
   //function to get the data from the form component
   const getInputOnSubmitHandler = (input) => {
@@ -15,8 +16,9 @@ function App() {
   };
 
   //get the results from the request component
-  const sendResultsHandler = (data) => {
-    setRequestResults(data);
+  const sendResultsHandler = (user, repo) => {
+    setUserResults(user);
+    setRepoResults(repo);
   };
 
   return (
@@ -31,7 +33,7 @@ function App() {
       <Request userInput={formInput} sendResults={sendResultsHandler} />
 
       {/* accepts the data from the request component */}
-      <UserInfo results={requestResults} />
+      <UserInfo userResults={userResults} repoResults={repoResults} />
     </div>
   );
 }

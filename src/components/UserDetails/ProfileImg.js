@@ -4,11 +4,7 @@ import styled from "./ProfileImg.module.css";
 function ProfileImg({ url, avatar, name }) {
   return (
     <div className={styled.profile}>
-      <img
-        className={styled.profileimg}
-        src={avatar}
-        alt={`profile for ${name}`}
-      />
+      <img className={styled.profileimg} src={avatar} alt="user profile" />
       <a className={styled.link} href={url}>
         View Profile
       </a>
@@ -17,3 +13,4 @@ function ProfileImg({ url, avatar, name }) {
 }
 
 export default ProfileImg;
+//alt={`profile for ${name}`}

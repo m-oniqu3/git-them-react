@@ -22,6 +22,7 @@ function Request({ userInput, sendResults }) {
   const repoUrl = `https://api.github.com/users/${userInput}/repos?per_page=${repoLimit}&sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`;
 
   //*
+
   useEffect(() => {
     const getUserAndRepos = async () => {
       try {
@@ -30,6 +31,7 @@ function Request({ userInput, sendResults }) {
           fetch(repoUrl).then((response) => response.json()),
         ]);
         setUserResults(responses[0].value);
+        setRepoResults(responses[1].value);
       } catch (error) {
         console.error(error);
       }
@@ -47,9 +49,9 @@ function Request({ userInput, sendResults }) {
 
   useEffect(() => {
     if (userInput && userResults.length !== 0) {
-      sendResults(userResults);
+      sendResults(userResults, repoResults);
     }
-  }, [userResults, userInput, sendResults]);
+  }, [userResults, userInput, sendResults, repoResults]);
 
   return <div></div>;
 }

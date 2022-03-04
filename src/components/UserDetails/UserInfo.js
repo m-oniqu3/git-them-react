@@ -1,11 +1,11 @@
 import React from "react";
 import ProfileImg from "./ProfileImg";
 import ProfileDetails from "./ProfileDetails";
-// import Repos from "./Repos";
+import Repos from "./Repos";
 
-function UserInfo({ results }) {
-  console.log(results);
-  //destructured the results object
+function UserInfo({ userResults, repoResults }) {
+  console.log(repoResults);
+  //destructured the userResults object
   const {
     url,
     name,
@@ -18,12 +18,12 @@ function UserInfo({ results }) {
     followers_url,
     public_gists,
     gists_url,
-  } = results;
+  } = userResults;
 
   return (
     <div>
-      {/* send some of the results data as props */}
-      {results.length !== 0 && (
+      {/* send some of the userResults data as props */}
+      {userResults.length !== 0 && (
         <section>
           <ProfileImg url={url} avatar={avatar_url} name={name} />
 
@@ -40,7 +40,8 @@ function UserInfo({ results }) {
           />
         </section>
       )}
-      {/* <Repos name={name} />  */}
+
+      {repoResults && <Repos repos={repoResults} />}
     </div>
   );
 }
