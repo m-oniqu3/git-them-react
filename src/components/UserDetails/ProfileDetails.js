@@ -12,6 +12,7 @@ function ProfileDetails({
   gists,
   gistsUrl,
 }) {
+  //TODO refactor this and use map function with array
   return (
     <section className={global.wrapper}>
       <h1>{name}</h1>

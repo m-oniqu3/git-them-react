@@ -32,8 +32,13 @@ function App() {
       {/* send the results from the api to the app component */}
       <Request userInput={formInput} sendResults={sendResultsHandler} />
 
-      {/* accepts the data from the request component */}
-      <UserInfo userResults={userResults} repoResults={repoResults} />
+      {/**
+       * accepts the data from the request component
+       * only renders if there is an input present
+       */}
+      {formInput && (
+        <UserInfo userResults={userResults} repoResults={repoResults} />
+      )}
     </div>
   );
 }

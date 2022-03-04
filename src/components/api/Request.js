@@ -7,6 +7,8 @@ function Request({ userInput, sendResults }) {
   const [repoResults, setRepoResults] = useState({});
   //const [repoResults, setRepoResults] = useState({});
 
+  //TODO add these to new files and then import them because this is a bit too crowdy
+
   //Keys
   const client_id = config.client_ID;
   const client_secret = config.client_Secret;
@@ -14,15 +16,16 @@ function Request({ userInput, sendResults }) {
   //Url
   const url = `https://api.github.com/users/${userInput}?client_id=${client_id}&client_secret=${client_secret}`;
 
-  //Repo Url
+  //Repo Url and constants
 
   const repoLimit = 6;
   const sort = "created:asc";
 
   const repoUrl = `https://api.github.com/users/${userInput}/repos?per_page=${repoLimit}&sort=${sort}&client_id=${client_id}&client_secret=${client_secret}`;
 
-  //*
-
+  /**fetched the data from the two endpoints
+   * update the state when the promises are resolved
+   * if there is a userinput then call the function to fetch the data */
   useEffect(() => {
     const getUserAndRepos = async () => {
       try {
@@ -42,11 +45,8 @@ function Request({ userInput, sendResults }) {
     }
   }, [url, repoUrl, userInput]);
 
-  //console.log(results);
-  // console.log(repoResults);
-
-  //if userinput and results exist and is not empty then send the results to the app component (parent)
-
+  /**checks if userinput and results exist
+   * send the results to the app component (parent) if the above is true*/
   useEffect(() => {
     if (userInput && userResults.length !== 0) {
       sendResults(userResults, repoResults);

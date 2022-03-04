@@ -4,6 +4,10 @@ import ProfileDetails from "./ProfileDetails";
 import Repos from "./Repos";
 
 function UserInfo({ userResults, repoResults }) {
+  //TODO refactor this and use map function with array
+  //TODO make responsive
+
+  //? but isn't it better to take the data that's needed instead of sending the entire object?
   //destructured the userResults object
   const {
     url,
@@ -40,9 +44,14 @@ function UserInfo({ userResults, repoResults }) {
         </section>
       )}
 
-      {repoResults.length !== 0 ? (
+      {/**
+       * checks if there is repository results and its not empty then send it to the repos component
+       */}
+
+      {repoResults && repoResults.length !== 0 ? (
         <Repos repos={repoResults} name={name} />
       ) : (
+        //TODO add styling to this
         <p>No repositories for this user </p>
       )}
     </div>
