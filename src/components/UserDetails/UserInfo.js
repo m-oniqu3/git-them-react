@@ -5,9 +5,6 @@ import ProfileDetails from "./ProfileDetails";
 
 function UserInfo({ results }) {
   console.log(results);
-
-  const user = results[0];
-  console.log(user);
   //destructured the results object
   const {
     url,
@@ -21,7 +18,7 @@ function UserInfo({ results }) {
     followers_url,
     public_gists,
     gists_url,
-  } = user.value;
+  } = results;
 
   return (
     <div>

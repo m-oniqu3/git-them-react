@@ -3,7 +3,8 @@ import config from "../../config";
 
 function Request({ userInput, sendResults }) {
   //State
-  const [results, setResults] = useState({});
+  const [userResults, setUserResults] = useState({});
+  const [repoResults, setRepoResults] = useState({});
   //const [repoResults, setRepoResults] = useState({});
 
   //Keys
@@ -28,21 +29,15 @@ function Request({ userInput, sendResults }) {
           fetch(url).then((response) => response.json()),
           fetch(repoUrl).then((response) => response.json()),
         ]);
-        setResults(responses);
+        setUserResults(responses[0].value);
       } catch (error) {
         console.error(error);
       }
     };
 
-    const timerid = setTimeout(() => {
-      if (userInput) {
-        getUserAndRepos();
-      }
-    }, 500);
-
-    return () => {
-      clearTimeout(timerid);
-    };
+    if (userInput) {
+      getUserAndRepos();
+    }
   }, [url, repoUrl, userInput]);
 
   //console.log(results);
@@ -51,10 +46,10 @@ function Request({ userInput, sendResults }) {
   //if userinput and results exist and is not empty then send the results to the app component (parent)
 
   useEffect(() => {
-    if (userInput && results.length !== 0) {
-      sendResults(results);
+    if (userInput && userResults.length !== 0) {
+      sendResults(userResults);
     }
-  }, [results, userInput, sendResults]);
+  }, [userResults, userInput, sendResults]);
 
   return <div></div>;
 }
